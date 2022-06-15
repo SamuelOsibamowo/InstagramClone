@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -25,6 +26,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         // If the user has already logged in, it will just go straight to that login
         if (ParseUser.getCurrentUser() != null) {

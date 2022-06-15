@@ -35,6 +35,9 @@ public class FeedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         rvPosts = findViewById(R.id.rvPosts);
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);

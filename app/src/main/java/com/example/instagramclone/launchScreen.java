@@ -16,6 +16,10 @@ public class launchScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.launch_screen);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

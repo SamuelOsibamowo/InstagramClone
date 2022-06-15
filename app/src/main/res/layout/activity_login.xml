@@ -2,37 +2,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/border"
         android:ems="10"
-        android:hint="username"
+        android:hint="      Phone number, username, or email"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ivIgLogo" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
         android:ems="10"
-        android:hint="password"
+        android:hint="      Password"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUsername" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+
+        android:backgroundTint="@color/link_blue"
         android:text="LOGIN"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+    <ImageView
+        android:id="@+id/ivIgLogo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/instagram_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
