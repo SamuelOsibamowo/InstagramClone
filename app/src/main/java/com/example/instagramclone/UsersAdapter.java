@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,18 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
 
-
 import org.parceler.Parcels;
 
 import java.util.List;
 
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
-    public static final String TAG = "PostsAdapter";
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
+    public static final String TAG = "UsersAdapter";
 
     private Context context;
     private List<Post> posts;
 
-    public PostsAdapter(Context context, List<Post> posts) {
+    public UsersAdapter(Context context, List<Post> posts) {
         this.context = context;
         this.posts = posts;
     }
@@ -37,38 +35,29 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     }
 
     @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
-        return new ViewHolder(view);
+    public UsersAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_post_user, parent, false);
+        return new UsersAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UsersAdapter.ViewHolder holder, int position) {
         Post post = posts.get(position);
         holder.bind(post);
     }
 
     protected class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        private TextView tvUsername;
         private ImageView ivPhoto;
-        private TextView tvDescription;
-        private TextView tvUsernameSmaller;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            tvUsername = itemView.findViewById(R.id.tvUsername);
             ivPhoto = itemView.findViewById(R.id.ivPhoto);
-            tvDescription = itemView.findViewById(R.id.tvDescription);
-            tvUsernameSmaller = itemView.findViewById(R.id.tvUsernameSmaller);
+
         }
 
         public void bind(Post post) {
-            tvDescription.setText(post.getDescription());
-            tvUsername.setText(post.getUser().getUsername());
-            tvUsernameSmaller.setText(post.getUser().getUsername());
             ParseFile image = post.getImage();
             if (image != null) {
                 Glide.with(context)
@@ -105,4 +94,3 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         notifyDataSetChanged();
     }
 }
-

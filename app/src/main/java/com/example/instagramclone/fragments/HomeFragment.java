@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment {
     public static final String TAG = "HomeFragment";
     private RecyclerView rvPosts;
     protected PostsAdapter adapter;
+
     protected List<Post> allPosts;
 
     private SwipeRefreshLayout swipeContainer;
@@ -101,7 +102,7 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void fetchTimelineAsync(int i) {
+    void fetchTimelineAsync(int i) {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.include(Post.KEY_USER);
         query.setLimit(20);
