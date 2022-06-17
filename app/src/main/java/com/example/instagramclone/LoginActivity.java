@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -20,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     final static String TAG = "LoginActivity";
     EditText etUsername;
     EditText etPassword;
-    Button btnLogin;
+    TextView btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
