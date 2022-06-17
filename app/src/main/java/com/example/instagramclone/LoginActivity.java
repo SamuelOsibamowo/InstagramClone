@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SignUpCallback;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -22,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText etUsername;
     EditText etPassword;
     TextView btnLogin;
+    TextView btnSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnSignup = findViewById(R.id.btnSignup);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +55,21 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToSignUpActivity();
+
+            }
+        });
+
     }
+
+    private void goToSignUpActivity(){
+        Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+        startActivity(intent);
+    }
+
 
     private void loginUser(String username, String password) {
         Log.i(TAG, "Attempting to login with existing credentials");

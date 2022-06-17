@@ -5,12 +5,14 @@
       <map>
         <entry key="app/src/main/res/drawable/border.xml" value="0.183" />
         <entry key="app/src/main/res/drawable/insta_gradient.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/insta_gradient_signup.xml" value="0.183" />
         <entry key="app/src/main/res/drawable/login_btn_back.xml" value="0.183" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.338768115942029" />
         <entry key="app/src/main/res/layout/activity_feed.xml" value="0.16939890710382513" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.338768115942029" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25905797101449274" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.338768115942029" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/fragment_post.xml" value="0.338768115942029" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.19630192502532928" />
